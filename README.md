@@ -52,11 +52,12 @@ The `ScoringTable` class represents a performance scoring table, allowing for ev
 ### Methods
 #### `search_event_keys(...) -> list`
 Filters and searches for event keys based on criteria like gender, discipline, and event type (e.g., road race, steeplechase, race walk).
-Event keys are stored in the format {GENDER}-{EVENT} [-{IDENTIFIERS}]
-Identifiers include: -RW (Racewalk) -RD (Roadrace) -SC (Steeple Chase) -SH (Short track) -MX (Mixed Relays)
-Examples: 
-M-100m (Men's 100m)
-M-4x400m-MX-SH (4x400m mixed relay on a short track) NOTE: M-4x400m-MX-SH == W-4x400m-MX-SH since the relays are mixed
+- Event keys are stored in the format {GENDER}-{EVENT} [-{IDENTIFIERS}]
+- Identifiers include: -RW (Racewalk) -RD (Roadrace) -SC (Steeple Chase) -SH (Short track) -MX (Mixed Relays)
+##### Examples: 
+- M-100m is the event key for the Men's 100m
+- M-4x400m-MX-SH is the event key for the 4x400m mixed relay on a short track 
+##### NOTE: M-4x400m-MX-SH is the same as W-4x400m-MX-SH since the relays are mixed genders
 
 #### `calculate_coefficients(event: str, flip_axis: bool = False, deg: int = 15) -> list`
 Generates polynomial coefficients for the event's performance curve.
