@@ -97,6 +97,16 @@ scoring_table = ScoringTable.from_json("scoring_data.json")
 mark = Mark("M-100m", "10.23")
 points = scoring_table.calculate_points_from_mark(mark)
 print(mark)
+>> M-100m - 10.23 (10.23s) - 1128 Points
+
+# Find equivalent performances
+womens_mark = scoring_table.calculate_equivalent_mark(mark, "W-100m")
+print(womens_mark)
+>> W-100m - 11.33 (11.33s) - 1128 Points
+
+five_k_mark = scoring_table.calculate_equivalent_mark(mark, "M-5000m")
+print(five_k_mark)
+>> M-5000m - 13:22.74 (802.7367319475935s) - 1128 Points
 ```
 
 ---
